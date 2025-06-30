@@ -1,0 +1,143 @@
+body {
+  background: #202020;
+  padding: 8px;
+  font-family: Inter, sans-serif;
+}
+
+*::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  position: absolute;
+  background: #ffffff55;
+  border-radius: 5px;
+}
+
+.input {
+  border-radius: 8px;
+  border: 1px solid #424242;
+  background: #2A2A2A;
+  box-sizing: border-box;
+  width: 100%;
+  height: 32px;
+  justify-content: space-between;
+  padding: 8px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  vertical-align: middle;
+  color: #FAFAFA;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.input-wrapper {
+  display: flex;
+  gap: 16px;
+}
+
+.results-container {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.results-wrapper {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &::after {
+    bottom: 48px;
+    right: 0;
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    content: "";
+    background: linear-gradient(180deg, transparent, #202020);
+  }
+}
+
+.outcome-wrapper {
+  box-sizing: border-box;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+  vertical-align: middle;
+  color: #FAFAFA;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid #424242;
+  border-bottom: none;
+  padding: 4px 8px;
+
+  &:first-child {
+    border-radius: 8px 8px 0 0;
+  }
+}
+
+.hash-wrapper {
+  width: 100%;
+  position: relative;
+  overflow-x: auto;
+
+  &::after {
+    top: 0;
+    right: 0;
+    position: absolute;
+    width: 10px;
+    height: 100%;
+    content: "";
+    background: linear-gradient(90deg, transparent, #202020);
+  }
+}
+
+.outcome {
+  height: 32px;
+  width: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+button {
+  margin-top: 16px;
+  padding: 8px 16px;
+  background: #374353;
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #4a5568;
+}
+
+.github-link {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  color: white;
+  opacity: 0.5;
+  transition: opacity 0.2s ease;
+  text-decoration: none;
+}
+
+.github-link:hover {
+  opacity: 0.8;
+}
