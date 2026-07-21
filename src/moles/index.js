@@ -197,11 +197,21 @@ function renderExplanation() {
 
   if (
     appState.selectedRound === null ||
-    !appState.showExplanation ||
     !appState.hashes.length ||
     appState.hashes.length <= appState.selectedRound
   ) {
     explanationContainer.innerHTML = '';
+    return;
+  }
+
+  if (!appState.showExplanation) {
+    explanationContainer.innerHTML = `
+      <div class="toggle-explanation">
+        <button class="button" onclick="showExplanation()">
+          Show Explanation
+        </button>
+      </div>
+    `;
     return;
   }
 
@@ -301,6 +311,11 @@ function renderExplanation() {
   `;
 
   explanationContainer.innerHTML = explanationHTML;
+}
+
+function showExplanation() {
+  appState.showExplanation = true;
+  renderExplanation();
 }
 
 function hideExplanation() {

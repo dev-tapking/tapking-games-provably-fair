@@ -227,8 +227,19 @@ function selectRow(rowIndex) {
 function renderExplanation() {
   const explanationContainer = document.getElementById('explanation-container');
   
-  if (appState.selectedRow === null || !appState.showExplanation || !appState.hashes || appState.hashes.length <= appState.selectedRow) {
+  if (appState.selectedRow === null || !appState.hashes || appState.hashes.length <= appState.selectedRow) {
     explanationContainer.innerHTML = '';
+    return;
+  }
+
+  if (!appState.showExplanation) {
+    explanationContainer.innerHTML = `
+      <div class="toggle-explanation">
+        <button class="button" onclick="showExplanation()">
+          Show Explanation
+        </button>
+      </div>
+    `;
     return;
   }
 
@@ -353,6 +364,11 @@ function renderExplanation() {
   `;
 
   explanationContainer.innerHTML = explanationHTML;
+}
+
+function showExplanation() {
+  appState.showExplanation = true;
+  renderExplanation();
 }
 
 function hideExplanation() {
